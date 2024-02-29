@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/HomeFragment">
+
+    <fragment
+        android:id="@+id/HomeFragment"
+        android:name="com.cs4520.assignment3.HomeFragment"
+        android:label="HomeFragment"
+        android:layout="@layout/home_fragment_layout">
+        <action
+            android:id="@+id/action_HomeFragment_to_MVPFragment"
+            app:destination="@id/MVPFragment" />
+        <action
+            android:id="@+id/action_HomeFragment_to_MVVMFragment"
+            app:destination="@id/MVVMFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/MVPFragment"
+        android:name="com.cs4520.assignment3.mvp.MVPFragment"
+        android:label="MVPFragment"
+        android:layout="@layout/mvp_layout">
+        <action
+            android:id="@+id/action_MVPFragment_to_home_fragment_layout"
+            app:destination="@id/HomeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/MVVMFragment"
+        android:name="com.cs4520.assignment3.mvvm.MVVMFragment"
+        android:label="MVVMFragment"
+        android:layout="@layout/mvvm_layout">
+        <action
+            android:id="@+id/action_MVVMFragment_to_home_fragment_layout"
+            app:destination="@id/HomeFragment" />
+    </fragment>
+</navigation>
